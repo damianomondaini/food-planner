@@ -1,0 +1,23 @@
+<% include ../blocks/head %>
+<% include ../blocks/header %>
+
+<h1>Create user</h1>
+<form action="/users/create" method="POST">
+    <p>
+        <label for="username">Userneame</label></br>
+        <input type="text" name="username" id="username">
+    </p>
+    <p>
+        <label for="password">Password</label></br>
+        <input type="text" name="password" id="password">
+    </p>
+    <p>
+        <label for="user">User</label>
+        <input type="radio" name="isAdmin" id="user" value="false" checked>
+        <label for="admin">Admin</label>
+        <input type="radio" name="isAdmin" id="admin" value="true">
+    </p>
+    <input type="submit">
+</form>
+
+<% include ../blocks/footer %>

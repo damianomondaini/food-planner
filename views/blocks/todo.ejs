@@ -1,0 +1,29 @@
+<div class="col-12" id="todo">
+    <h2>To do list</h2>
+    <form>
+        <div class="input-group mb-3">
+            <input
+                type="text"
+                name="todo"
+                id="todo"
+                class="form-control"
+                placeholder="To do"
+                aria-label="To do"
+                aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <input class="btn btn-outline-primary todo__submit" type="submit" value="Submit"></input>
+            </div>
+        </div>
+    </form>
+    <ul class="list-group todo__list">
+        <% for (let i = 0; i < data.todo.length; i++) { %>
+            <li class="list-group-item todo__item" data-id="<%= data.todo[i]._id %>">
+                <span><%= data.todo[i].todo %></span>
+                <a href="/admin/<%= data.todo[i].id %>/todo-remove">
+                    <i class="fas fa-times todo__delete"></i>
+                </a>
+            </li>
+        <% } %>
+    </ul>
+    <script src="/src/public/js/ajax/todo.js"></script>
+</div>

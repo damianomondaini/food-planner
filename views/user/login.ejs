@@ -1,0 +1,17 @@
+<% include ../blocks/head %>
+<% include ../blocks/header %>
+
+<h1>Login</h1>
+<form action="/users/login" method="POST">
+    <p>
+        <label for="username">Userneame</label></br>
+        <input type="text" name="username" id="username">
+    </p>
+    <p>
+        <label for="password">Password</label></br>
+        <input type="text" name="password" id="password">
+    </p>
+    <input type="submit">
+</form>
+
+<% include ../blocks/footer %>

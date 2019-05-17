@@ -1,0 +1,40 @@
+<% include ../blocks/head %>
+
+<div class="dashb-header">
+    <ul class="dashb-header__tools">
+        <li class="dashb-header__item "><a href="/"><i class="fas fa-home"></i> <span class="dashb-header__tools-text">Home</span></a></li>
+        <li class="dashb-header__tools__date"><p class="dashb-header__tools-text"><%= new Date().toDateString() %></p></li>
+        <li class="dashb-header__item "><a href="#"><i class="fas fa-plus"></i> <span class="dashb-header__tools-text">Quick link</span></a></li>
+    </ul>
+    <ul class="dashb-header__user">
+        <li class="dashb-header__item"><p class="dashb-header__user-text dashb-header__user-text--displayed">Hi <%= user %>!</p></li>
+        <li class="dashb-header__item "><a href="/users/logout"><i class="fas fa-sign-out-alt"></i> <span class="dashb-header__user-text">Logout</span></a></li>
+    </ul>
+</div>
+<div class="dashb">
+    <div class="dashb__panel">
+        <ul class="dashb__panel-menu">
+            <li class="dashb__menu-item">
+                <a href="/admin">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
+                </a>
+            </li>
+            <li class="dashb__menu-item">
+                <a href="/admin/users">
+                    <i class="fas fa-user"></i>
+                    Users
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="dashb__main">
+        <% if (board === "main") { %>
+            <% include ../blocks/dashboard-main %>
+        <% } else if (board === "users") { %>
+            <% include ../blocks/dashboard-users %>
+        <% } %>
+    </div>
+</div>
+
+<% include ../blocks/footer %>

@@ -1,0 +1,149 @@
+// Header
+
+.dashb-header {
+    height: $dashb-header-height;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dashb-header__tools {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashb-header__user {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dashb-header__item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.dashb-header__user-text {
+    margin: 0;
+    display: none;
+
+    @include mq($bp-xs) {
+        display: inline;
+    }
+}
+
+.dashb-header__tools-text {
+    margin: 0;
+    display: none;
+
+    @include mq($bp-xs) {
+        display: inline;
+    }
+}
+
+.dashb-header__tools__title {
+    display: none;
+
+    @include mq($bp-xs) {
+        display: inline;
+    }
+}
+
+.dashb-header__tools__date {
+    display: none;
+
+    @include mq($bp-xs) {
+        display: flex;
+        align-items: center;
+    }
+}
+
+.dashb-header__user-text--displayed {
+    display: inline;
+}
+
+// Dashboard
+
+/* Dashboard */
+
+.dashb {
+    display: flex;
+    flex-direction: column;
+    height: calc(100vh - #{$dashb-header-height});
+    overflow: hidden;
+
+    @include mq($bp-sm) {
+        flex-direction: row;
+    }
+}
+
+/* Panel */
+
+.dashb__panel {
+    height: $dashb-panel-height;
+    background-color: $dashb-primary;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+
+    @include mq($bp-sm) {
+        height: 100%;
+        width: 150px;
+        padding: 0;
+    }
+}
+
+.dashb__panel-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    @include mq($bp-sm) {
+        flex-flow: column;
+        justify-content: flex-start;
+    }
+}
+
+.dashb__menu-item {
+    padding: 1rem;
+
+    @include mq($bp-sm) {
+        width: 100%;
+    }
+}
+
+.dashb__menu-item > a {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    color: white;
+}
+
+.dashb__menu-item > a > i {
+    font-size: 1.5rem;
+}
+
+/* Main */
+
+.dashb__main {
+    overflow-y: scroll;
+    width: 100%;
+    padding-top: 50px;
+    background-color: #f2f2f2;
+}
+
+.dashb__main::-webkit-scrollbar {
+    display: none;
+}
+
+.dashb__main > .container > .row > * {
+    margin-bottom: 40px;
+}

@@ -1,0 +1,21 @@
+// Base
+
+html {
+    box-sizing: border-box;
+    font-family: $base-font-family;
+    line-height: 1.5;
+    min-height: 100%;
+    word-wrap: break-word;
+}
+
+body {
+    min-height: 100%;
+}
+
+* {
+    &,
+    &:before,
+    &:after {
+        box-sizing: inherit;
+    }
+}
