@@ -19,6 +19,10 @@ $base-line-height: 1.5 !default;
 $color-white: #ffffff !default;
 $color-black: #000000 !default;
 
+$color-primary: #ff5252;
+
+$color-secondary: #f2f2f2;
+
 /*
  * Breakpoint B4
 */
@@ -35,3 +39,9 @@ $bp-lg: 1200px;
 $dashb-header-height: 50px;
 $dashb-panel-height: 80px;
 $dashb-primary: #34495e;
+
+/*
+ * Components
+*/
+
+$header-height: 50px;

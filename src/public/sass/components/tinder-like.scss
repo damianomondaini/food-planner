@@ -1,0 +1,47 @@
+.tinder-container {
+    height: calc(100vh - 100px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.tinder-row {
+    height: 85%;
+}
+
+.controls-row {
+    height: 15%;
+}
+
+.tinder {
+    height: 100%;
+}
+
+.tinder__inner {
+    height: 100%;
+    position: relative;
+}
+
+.tinder__list {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.tinder__item {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+}
+
+.tinder__card {
+    height: 100%;
+}
+
+.tinder__card-img {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}

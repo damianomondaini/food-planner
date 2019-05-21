@@ -1,0 +1,28 @@
+.header__inner {
+    background-color: $color-primary;
+    height: $header-height;
+    padding: 5px 0 5px 0;
+}
+
+.header__chef-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header__logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__info-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header__logo {
+    margin: 0;
+    color: $color-white;
+}

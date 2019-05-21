@@ -19,7 +19,7 @@ exports.user_delete = (req, res) => {
     })
 }
 
-exports.user_update = (req, res) => {
+exports.user_updateByAdmin = (req, res) => {
     User.findById(req.body.id, (err, user) => {
         if (user.username === req.body.username) {
             if (req.body.updatePassword == 'true') {
