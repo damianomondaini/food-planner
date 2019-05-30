@@ -7,6 +7,7 @@
 
 .tinder-row {
     height: 85%;
+    padding-top: 15px;
 }
 
 .controls-row {
@@ -44,4 +45,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+}
+
+.tinder-controls {
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }

@@ -21,8 +21,9 @@ let app = express()
 app.set('view engine', 'ejs')
 
 // Using our packages
+app.use(bodyParser({limit: '50mb'}))
 app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(morgan('combined'))
 app.use(cookieParser('foo'))
 app.use(expressSession({

@@ -1,0 +1,159 @@
+<% include ../blocks/head %>
+<% include ../blocks/header %>
+
+<!-- Modal -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="editModalTitle">Edit NAME</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="recipeNameUpdate">Name</label>
+                    <input type="text" class="form-control" id="recipeNameUpdate">
+                </div>
+                <div class="form-group">
+                    <label for="recipeCategoryUpdate">Category</label>
+                    <select class="form-control" id="recipeCategoryUpdate">
+                        <% include ../blocks/categories %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="true" id="recipeCheatMealUpdate">
+                        <label class="form-check-label" for="recipeCheatMealUpdate">
+                            Is it a cheat meal ?
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="recipeServingUpdate">Serving</label>
+                    <input type="number" class="form-control" id="recipeServingUpdate">
+                </div>
+                <div class="form-group">
+                    <label for="recipeIngredientsUpdate">Ingredients</label>
+                    <textarea class="form-control" id="recipeIngredientsUpdate" rows="10"></textarea>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="recipeImageUpdate">Image</label>
+                        <input type="file" class="form-control-file" id="recipeImageUpdate" accept=".png, .jpg, .jpeg">
+                    </div>
+                </form>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger recipeDelete" data-dismiss="modal">Delete</button>
+            <button type="button" class="btn btn-success recipeUpdate" data-dismiss="modal">Update</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="createModal" tabindex="-1" role="dialog" aria-labelledby="createModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="createModalTitle">Add a recipe</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form class="recipeFormCreate">
+                <div class="form-group">
+                    <label for="recipeNameCreate">Name</label>
+                    <input type="text" class="form-control" id="recipeNameCreate" name="recipeNameCreate">
+                </div>
+                <div class="form-group">
+                    <label for="recipeCategoryCreate">Category</label>
+                    <select class="form-control" id="recipeCategoryCreate">
+                        <% include ../blocks/categories %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="true" id="recipeCheatMealCreate">
+                        <label class="form-check-label" for="recipeCheatMealCreate">
+                            Is it a cheat meal ?
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="recipeServingCreate">Serving</label>
+                    <div class="input-group">
+                        <input type="number" class="form-control" id="recipeServingCreate">
+                        <div class="input-group-append">
+                            <span class="input-group-text">Times</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" id="recipeIngredientBoxCreate">
+                    <label>Ingredients <i class="fas fa-plus" id="recipeAddIngredientCreate"></i></label>
+                    <div class="input-group" id="recipeIngredientModelCreate">
+                        <input type="text" class="form-control" placeholder="Ingredient" id="recipeIngredient1Create">
+                        <input type="text" class="form-control" placeholder="Amount" id="recipeAmount1Create">
+                        <select class="form-control" id="recipeUnit1Create">
+                            <option value="g">g</option>
+                            <option value="ml">ml</option>
+                            <option value="none">none</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="recipeImageCreate">Image</label>
+                    <input type="file" class="form-control-file" id="recipeImageCreate" accept=".png, .jpg, .jpeg" name="recipeImageCreate">
+                </div>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-primary recipeCreate" data-dismiss="modal">Create</button>
+        </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row user">
+        <div class="col-12 user__container">
+            <img class="user__img" src="https://picsum.photos/id/538/150/150" alt="User picture">
+            <p class="user__username">Username</p>
+            <p class="user__role">Famous pizzaiolo</p>
+        </div>
+    </div>
+    <div class="row recipes">
+        <div class="col-12 recipes__title-container">
+            <h2 class="recipes__title">Recipes</h2>
+            <a class="recipes__add-link" data-toggle="modal" data-target="#createModal">
+                <i class="fas fa-plus"></i>
+            </a>
+        </div>
+        <div class="col-12 recipes__list-container">
+            <ul class="list-group recipes__list">
+                <li class="list-group-item recipes__item">
+                    <div class="recipes__img" style="background-image: url('https://picsum.photos/id/538/1080/1920');"></div>
+                    <div class="recipes__info-container">
+                        <div class="recipes__info">
+                            <p class="recipes__name">Name</p>
+                            <p class="recipes__category">Category</p>
+                        </div>
+                        <a class="recipes__update-link" data-toggle="modal" data-target="#editModal">
+                            <i class="fas fa-edit"></i>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script src="/src/public/js/ajax/add-recipe.js"></script>
+
+<% include ../blocks/footer %>
+<% include ../blocks/foot %>

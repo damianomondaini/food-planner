@@ -2,6 +2,7 @@
     background-color: $color-primary;
     height: $header-height;
     padding: 5px 0 5px 0;
+    border-radius: 0 0 10px 10px;
 }
 
 .header__chef-container {
@@ -25,4 +26,12 @@
 .header__logo {
     margin: 0;
     color: $color-white;
+}
+
+.header__chef-img {
+    height: $header-height - 10px;
+    width: $header-height - 10px;
+    border-radius: 100%;
+    background-image: url('/src/public/img/chef/chef1.svg');
+    background-color: lightgrey;
 }
