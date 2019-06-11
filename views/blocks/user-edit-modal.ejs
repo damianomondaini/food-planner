@@ -1,0 +1,60 @@
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="editModalTitle">Edit <span id="recipeNameTitleUpdate"></span></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="form-group">
+                    <label for="recipeNameUpdate">Name</label>
+                    <input type="text" class="form-control" id="recipeNameUpdate">
+                </div>
+                <div class="form-group">
+                    <label for="recipeCategoryUpdate">Category</label>
+                    <select class="form-control" id="recipeCategoryUpdate">
+                        <% include ../blocks/categories %>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="true" id="recipeCheatMealUpdate">
+                        <label class="form-check-label" for="recipeCheatMealUpdate">
+                            Is it a cheat meal ?
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="recipeServingUpdate">Serving</label>
+                    <input type="number" class="form-control" id="recipeServingUpdate">
+                </div>
+                <div class="form-group" id="recipeIngredientBoxUpdate">
+                    <label>Ingredients <i class="fas fa-plus" id="recipeAddIngredientUpdate"></i></label>
+                    <div class="input-group recipeIngredientUpdate" id="recipeIngredientModelCreate">
+                        <input type="text" class="form-control" placeholder="Ingredient" id="recipeIngredient1Update">
+                        <input type="text" class="form-control" placeholder="Amount" id="recipeAmount1Update">
+                        <select class="form-control" id="recipeUnit1Update">
+                            <option value="g">g</option>
+                            <option value="ml">ml</option>
+                            <option value="none">none</option>
+                        </select>
+                    </div>
+                </div>
+                <form>
+                    <div class="form-group">
+                        <label for="recipeImageUpdate">Image</label>
+                        <input type="file" class="form-control-file" id="recipeImageUpdate" accept=".png, .jpg, .jpeg">
+                    </div>
+                </form>
+            </form>
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger recipeDelete" data-dismiss="modal" id="recipeDeleteUpdate">Delete</button>
+            <button type="button" class="btn btn-success recipeUpdate" data-dismiss="modal">Update</button>
+        </div>
+        </div>
+    </div>
+</div>

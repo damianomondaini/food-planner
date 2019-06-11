@@ -4,12 +4,12 @@ html {
     box-sizing: border-box;
     font-family: $base-font-family;
     line-height: 1.5;
-    min-height: 100%;
+    min-height: 100vh;
     word-wrap: break-word;
 }
 
 body {
-    min-height: 100%;
+    min-height: 100vh;
     overflow: hidden;
     background-color: $color-secondary;
 }
@@ -20,4 +20,8 @@ body {
     &:after {
         box-sizing: inherit;
     }
+}
+
+::-webkit-scrollbar {
+    display: none;
 }

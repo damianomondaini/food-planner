@@ -11,7 +11,7 @@ exports.recipe_create = (req, res, next) => {
     let user
 
     if (req.user === undefined) {
-        user = '5cdeaebb1c9d440000ed9427'
+        user = process.env.ANONYMOUS_USER
     } else {
         user = req.user._id
     }
@@ -28,8 +28,31 @@ exports.recipe_create = (req, res, next) => {
 
     recipe.save((err, recipe) => {
         if (err) throw err
-        res.json(recipe)
+        Recipe.findById(recipe._id).populate('category').exec((err, recipe) => {
+            if (err) throw err
+            res.json(recipe)
+        })
     })
+}
 
-    next()
+exports.recipe_delete = (req, res) => {
+    Recipe.findByIdAndRemove(req.params.id, (err) => {
+        if (err) throw err
+        res.json(true)
+    })
+}
+
+exports.recipe_all = (req, res, next) => {
+    let currentUser
+    if (req.user) {
+        currentUser = req.user._id
+    } else {
+        currentUser = process.env.ANONYMOUS_USER
+    }
+    Recipe.find({ user: currentUser }).populate('category').exec((err, recipes) => {
+        if (err) throw err
+        console.log(recipes)
+        res.locals['recipes'] = recipes
+        next()
+    })
 }

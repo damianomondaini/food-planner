@@ -1,33 +1,69 @@
-<% include ../blocks/head %>
-<% include ../blocks/header %>
-
 <div class="container tinder-container">
-    <div class="row tinder-row">
+    <!--<div class="row tinder-progress-row">
         <div class="col-12">
-            <div class="tinder">
-                <div class="tinder__inner">
-                    <ul class="tinder__list">
-                        <li class="tinder__item">
-                            <div class="card tinder__card">
-                                <div style="background-image: url('https://picsum.photos/id/178/1080/1920')" alt="" class="card-img-top tinder__card-img"></div>
-                                <div class="card-body">
-                                    <p class="card-title">Hi</p>
+            <div class="tinder-progress">
+                <div class="tinder-progress__inner">
+                    <i class="fas fa-trophy tinder-progress__icon"></i>
+                    <div class="progress tinder-progress__progress">
+                        <div
+                            class="progress-bar tinder-progress__progress-bar"
+                            role="progressbar"
+                            style="width: 90%"
+                            aria-valuenow="25"
+                            aria-valuemin="0"
+                            aria-valuemax="100"></div>
+                    </div>
+                    <p class="tinder-progress__percent">100%</p>
+                </div>
+            </div>
+        </div>
+    </div>-->
+    <div class="row tinder-swipe-row">
+        <div class="col-12 tinder-swipe-col">
+            <div class="tinder-swipe">
+                <div class="tinder-swipe__inner">
+                    <ul class="tinder-swipe__list">
+                        <li class="tinder-swipe__item">
+                            <div class="tinder-swipe__card card">
+                                <div
+                                    class="tinder-swipe__card-img card-img-top"
+                                    style="background-image: url('https://picsum.photos/id/1050/800/800')"></div>
+                                <div class="tinder-swipe__card-body card-body">
+                                    <h5 class="tinder-swipe__card-title card-title">Title</h5>
+                                    <p class="tinder-swipe__card-category">Category</p>
                                 </div>
                             </div>
                         </li>
-                        <li class="tinder__item">
-                            <div class="card tinder__card">
-                                <div style="background-image: url('https://picsum.photos/id/178/1080/1920')" alt="" class="card-img-top tinder__card-img"></div>
-                                <div class="card-body">
-                                    <p class="card-title">Hi</p>
+                        <li class="tinder-swipe__item">
+                            <div class="tinder-swipe__card card">
+                                <div
+                                    class="tinder-swipe__card-img card-img-top"
+                                    style="background-image: url('https://picsum.photos/id/1050/800/800')"></div>
+                                <div class="tinder-swipe__card-body card-body">
+                                    <h5 class="tinder-swipe__card-title card-title">Title</h5>
+                                    <p class="tinder-swipe__card-category">Category</p>
                                 </div>
                             </div>
                         </li>
-                        <li class="tinder__item">
-                            <div class="card tinder__card">
-                                <div style="background-image: url('https://picsum.photos/id/178/1080/1920')" alt="" class="card-img-top tinder__card-img"></div>
-                                <div class="card-body">
-                                    <p class="card-title">Hi</p>
+                        <li class="tinder-swipe__item">
+                            <div class="tinder-swipe__card card">
+                                <div
+                                    class="tinder-swipe__card-img card-img-top"
+                                    style="background-image: url('https://picsum.photos/id/1050/800/800')"></div>
+                                <div class="tinder-swipe__card-body card-body">
+                                    <h5 class="tinder-swipe__card-title card-title">Title</h5>
+                                    <p class="tinder-swipe__card-category">Category</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="tinder-swipe__item">
+                            <div class="tinder-swipe__card card">
+                                <div
+                                    class="tinder-swipe__card-img card-img-top"
+                                    style="background-image: url('https://picsum.photos/id/1050/800/800')"></div>
+                                <div class="tinder-swipe__card-body card-body">
+                                    <h5 class="tinder-swipe__card-title card-title">Title</h5>
+                                    <p class="tinder-swipe__card-category">Category</p>
                                 </div>
                             </div>
                         </li>
@@ -36,18 +72,21 @@
             </div>
         </div>
     </div>
-    <div class="row controls-row">
-        <div class="col-12">
+    <div class="row tinder-controls-row">
+        <div class="col-12 tinder-controls-col">
             <div class="tinder-controls">
-                <button data-tinder="dislike" class="btn dislike"><i class="fas fa-times"></i></button>
-                <button class="btn random"><i class="fas fa-dice"></i></button>
-                <button data-tinder="like" class="btn like"><i class="fas fa-check"></i></button>
+                <div class="tinder-controls__inner">
+                    <a class="tinder-controls__dislike tinder-controls__button .dislike" data-tinder="dislike">
+                        <i class="fas fa-times"></i>
+                    </a>
+                    <a class="tinder-controls__dice tinder-controls__button">
+                        <i class="fas fa-dice"></i>
+                    </a>
+                    <a class="tinder-controls__like tinder-controls__button .like" data-tinder="like">
+                        <i class="fas fa-check"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 </div>
-
-<script src="/src/public/js/other/tinder.js"></script>
-
-<% include ../blocks/footer %>
-<% include ../blocks/foot %>

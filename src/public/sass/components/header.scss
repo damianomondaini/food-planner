@@ -1,13 +1,17 @@
-.header__inner {
-    background-color: $color-primary;
+.header {
     height: $header-height;
+    background-color: $color-primary;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+}
+
+.header__inner {
+    height: 100%;
     padding: 5px 0 5px 0;
-    border-radius: 0 0 10px 10px;
 }
 
 .header__chef-container {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
 }
 
@@ -17,21 +21,23 @@
     align-items: center;
 }
 
-.header__info-container {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
 .header__logo {
     margin: 0;
     color: $color-white;
 }
 
+.header__info-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-white; 
+}
+
 .header__chef-img {
+    background-image: url("/src/public/img/chef/chef1.svg");
     height: $header-height - 10px;
     width: $header-height - 10px;
     border-radius: 100%;
-    background-image: url('/src/public/img/chef/chef1.svg');
-    background-color: lightgrey;
+    background-repeat: no-repeat;
+    background-color: $color-secondary;
 }

@@ -13,37 +13,24 @@ let storage = multer.diskStorage({
 var upload = multer({ storage: storage })
 let router = express.Router()
 
-let main_controller = require('../controllers/main.controller')
 let category_controller = require('../controllers/category.controller')
 let recipe_controller = require('../controllers/recipe.controller')
 let drive = require('../middleware/drive')
 
-router.get('/', connect.ensureLoggedIn('/users/login'), (req, res) => {
-    res.render('main/index')
+router.get('/', recipe_controller.recipe_all, category_controller.category_all, (req, res) => {
+    res.render('main/index', {data: res.locals})
 })
 
 router.get('/swipe', (req, res) => {
     res.render('main/swipe')
 })
 
-router.get('/me', category_controller.category_all, (req, res) => {
-    res.render('main/me', {data: res.locals})
-})
 
-router.post('/me/recipe-add', upload.single('image'), drive.uploadImage, recipe_controller.recipe_create, (req, res) => {
-    console.log('----------------------------');
-    console.log('----------------------------');
-    console.log('DONE');
-    console.log('----------------------------');
-    console.log('----------------------------');
-})
+router.post('/me/recipe-add', upload.single('image'), drive.uploadImage, recipe_controller.recipe_create)
+router.post('/me/:id/recipe-remove', drive.deleteImage, recipe_controller.recipe_delete)
 
 router.get('/test', (req, res) => {
     res.render('main/test')
-})
-
-router.post('/test', /*upload.single('name'),*/ (req, res) => {
-    console.log(req.file);
 })
 
 module.exports = router

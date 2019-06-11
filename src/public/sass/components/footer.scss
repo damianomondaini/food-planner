@@ -1,26 +1,28 @@
-.footer__menu {
+.footer {
+    height: $header-height;
+    background-color: $color-white;
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.25);
+    position: absolute;
+    bottom: 0;
+}
+
+.footer__link {
+    border: 0 !important;
+    color: $color-black;
+}
+
+.nav-link.active {
+    color: $color-primary !important;
+}
+
+.footer__container-link {
+    border: 0;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 100%;
 }
 
-.footer__inner {
-    background-color: $color-primary;
-    height: 50px;
-    border-radius: 10px 10px 0 0;
-}
-
-.footer__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.25rem;
-    color: $color-white;
-    text-align: center;
-}
-
-.footer {
-    position: absolute;
-    bottom: 0;
+.footer__nav {
+    height: 100%;
 }

@@ -1,7 +1,30 @@
 <% include  ../blocks/head %>
 <% include  ../blocks/header %>
 
-<h1>Hello World!</h1>
-<p>Happy coding</p>
+<main class="main">
+    <div class="tab-content main__inner" id="nav-tabContent">
+        <div
+            class="tab-pane fade show active tinder-tab"
+            id="tinder-tab"
+            role="tabpanel"
+            aria-labelledby="nav-home-tab"><% include ../main/swipe %></div>
+        <div
+            class="tab-pane fade calendar-tab"
+            id="calendar-tab"
+            role="tabpanel"
+            aria-labelledby="nav-profile-tab">...</div>
+        <div
+            class="tab-pane fade shopping-tab"
+            id="shopping-tab"
+            role="tabpanel"
+            aria-labelledby="nav-contact-tab">...</div>
+        <div
+            class="tab-pane fade user-tab"
+            id="user-tab"
+            role="tabpanel"
+            aria-labelledby="nav-contact-tab"><% include ../main/user %></div>
+    </div>
+</main>
 
+<% include ../blocks/footer %>
 <% include ../blocks/foot %>

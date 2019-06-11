@@ -7,10 +7,10 @@
 @import "./base/responsive";
 
 // Components
+@import "./components/main";
 @import "./components/dashboard";
 @import "./components/todo";
 @import "./components/update-form";
-@import "./components/tinder-like";
 @import "./components/header";
 @import "./components/footer";
-@import "./components/user";
+@import "./components/swipe";

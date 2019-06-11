@@ -44,7 +44,6 @@ app.all('/admin/*', requiresAdmin())
 // Routes
 app.use('/src', express.static('src'))
 app.use('/', main)
-app.use('/users', user)
 app.use('/admin', admin)
 
 app.listen(process.env.PORT)

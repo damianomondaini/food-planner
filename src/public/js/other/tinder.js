@@ -1,16 +1,16 @@
 /**
  * jTinder initialization
  */
-$(".tinder__inner").jTinder({
+$(".tinder-swipe__inner").jTinder({
 	// dislike callback
     onDislike: function (item) {
 	    // set the status text
-        alert("👎")
+        item.remove()
     },
 	// like callback
     onLike: function (item) {
 	    // set the status text
-        alert("👍🏻")
+        item.remove()
     },
 	animationRevertSpeed: 200,
 	animationSpeed: 400,
@@ -22,7 +22,17 @@ $(".tinder__inner").jTinder({
 /**
  * Set button action to trigger jTinder like & dislike.
  */
-$('.tinder-controls .like, .tinder-controls .dislike').click(function(e){
+$('.tinder-controls__dislike, .tinder-controls__like').click(function(e){
 	e.preventDefault()
-	$(".tinder__inner").jTinder($(this).attr('data-tinder'))
+	$(".tinder-swipe__inner").jTinder($(this).attr('data-tinder'))
+})
+
+$('.tinder-controls__dice').click(function(e){
+	e.preventDefault()
+	var random = Math.floor(Math.random() * 2)
+	if (random === 0) {
+		$(".tinder-swipe__inner").jTinder('dislike')
+	} else {
+		$(".tinder-swipe__inner").jTinder('like')
+	}
 })

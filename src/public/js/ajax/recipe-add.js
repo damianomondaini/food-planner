@@ -48,6 +48,16 @@ $('.recipeCreate').on('click', () => {
     formData.append('ingredients', JSON.stringify(recipeIngredientCreate))
     formData.append('image', recipeImageCreate)
 
+    $('#recipeIngredientModelCreate').nextAll().remove()
+    $('#recipeIngredientModelCreate > input').val('')
+    $('#recipeIngredientModelCreate > select > option').first().attr('selected', 'selected')
+    $('#recipeNameCreate').val('')
+    $('#recipeCategoryCreate > option').first().attr('selected', 'selected')
+    $('#recipeCheatMealCreate').prop('checked', false)
+    $('#recipeServingCreate').val('')
+    $('#recipeImageCreate').val('')
+    recipeIngredientCreate = []
+
     $.ajax({
         type: "POST",
         url: "/me/recipe-add",
@@ -56,7 +66,24 @@ $('.recipeCreate').on('click', () => {
         contentType: false
     })
     .done((data) => {
-        console.log(data)
-        recipeIngredientCreate = []
+        var recipeAdded = $('#recipes__item--model').first().clone()
+        recipeAdded.css('display', 'flex')
+        recipeAdded.attr('data-recipe', JSON.stringify(data))
+        recipeAdded.find('.recipes__img').css('background-image', 'url("https://drive.google.com/uc?export=view&id=' + data.imageId + '")')
+        recipeAdded.find('.recipes__name').text(data.name)
+        recipeAdded.find('.recipes__category').text(data.category.name)
+        recipeAdded.appendTo($('.recipes__list'))
     })
+})
+
+$('.createModalClose').on('click', () => {
+    $('#recipeIngredientModelCreate').nextAll().remove()
+    $('#recipeIngredientModelCreate > input').val('')
+    $('#recipeIngredientModelCreate > select > option').first().attr('selected', 'selected')
+    $('#recipeNameCreate').val('')
+    $('#recipeCategoryCreate > option').first().attr('selected', 'selected')
+    $('#recipeCheatMealCreate').prop('checked', false)
+    $('#recipeServingCreate').val('')
+    $('#recipeImageCreate').val('')
+    recipeIngredientCreate = []
 })
