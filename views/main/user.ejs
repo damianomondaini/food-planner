@@ -29,22 +29,7 @@
             <div class="recipes">
                 <div class="recipes__inner">
                     <ul class="recipes__list">
-                        <li class="recipes__item recipes__model">
-                            <div class="recipes__card card">
-                                <div class="recipes__card-body card-body">
-                                    <div class="recipes__card-img"></div>
-                                    <div class="recipes__card-content">
-                                        <div class="recipes__card-text">
-                                            <h4 class="recipes__card-title">Name</h4>
-                                            <p class="recipes__card-category">Category</p>
-                                        </div>
-                                        <a class="recipes__action" data-toggle="modal" data-target="#editModal">
-                                            <i class="fas fa-ellipsis-v"></i>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                        <% include ../blocks/user-recipes %>
                     </ul>
                 </div>
             </div>
