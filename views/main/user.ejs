@@ -1,31 +1,53 @@
-<% include ../blocks/head %>
-<% include ../blocks/header %>
-
 <!-- Modal -->
 <% include ../blocks/user-edit-modal %>
 
 <!-- Modal -->
 <% include ../blocks/user-add-modal %>
 
-<div class="container">
-    <div class="row user">
-        <div class="col-12 user__container">
-            <img class="user__img" src="https://picsum.photos/id/538/150/150" alt="User picture">
-            <p class="user__username">Username</p>
-            <p class="user__role">Famous pizzaiolo</p>
+<div class="container-fluid user-container">
+    <div class="row user-row">
+        <div class="col-12 user-col">
+            <div class="user">
+                <div class="user__inner">
+                    <img class="user__img" src="https://picsum.photos/id/538/150/150" alt="User picture">
+                    <p class="user__username">Username</p>
+                    <p class="user__role">Famous pizzaiolo</p>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="row recipes">
-        <div class="col-12 recipes__title-container">
-            <h2 class="recipes__title">Recipes</h2>
-            <a class="recipes__add-link" data-toggle="modal" data-target="#createModal">
-                <i class="fas fa-plus"></i>
-            </a>
+</div>
+<div class="container recipes-container">
+    <div class="row recipes-title-row">
+        <div class="col-12 recipes-title-col">
+            <h2 class="recipes-title">Recipes</h2>
+            <a class="recipes-add-link" data-toggle="modal" data-target="#createModal"><i class="fas fa-plus"></i></a>
         </div>
-        <div class="col-12 recipes__list-container">
-            <ul class="list-group recipes__list">
-                <% include ../blocks/recipes %>
-            </ul>
+    </div>
+    <div class="row recipes-row">
+        <div class="col-12 recipes-col">
+            <div class="recipes">
+                <div class="recipes__inner">
+                    <ul class="recipes__list">
+                        <li class="recipes__item recipes__model">
+                            <div class="recipes__card card">
+                                <div class="recipes__card-body card-body">
+                                    <div class="recipes__card-img"></div>
+                                    <div class="recipes__card-content">
+                                        <div class="recipes__card-text">
+                                            <h4 class="recipes__card-title">Name</h4>
+                                            <p class="recipes__card-category">Category</p>
+                                        </div>
+                                        <a class="recipes__action" data-toggle="modal" data-target="#editModal">
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 </div>
