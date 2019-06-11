@@ -66,12 +66,12 @@ $('.recipeCreate').on('click', () => {
         contentType: false
     })
     .done((data) => {
-        var recipeAdded = $('#recipes__item--model').first().clone()
-        recipeAdded.css('display', 'flex')
+        var recipeAdded = $('.recipes__model').first().clone()
+        recipeAdded.css('display', 'block')
         recipeAdded.attr('data-recipe', JSON.stringify(data))
-        recipeAdded.find('.recipes__img').css('background-image', 'url("https://drive.google.com/uc?export=view&id=' + data.imageId + '")')
-        recipeAdded.find('.recipes__name').text(data.name)
-        recipeAdded.find('.recipes__category').text(data.category.name)
+        recipeAdded.find('.recipes__card-img').css('background-image', 'url("https://drive.google.com/uc?export=view&id=' + data.imageId + '")')
+        recipeAdded.find('.recipes__card-title').text(data.name)
+        recipeAdded.find('.recipes__card-category').text(data.category.name)
         recipeAdded.appendTo($('.recipes__list'))
     })
 })
